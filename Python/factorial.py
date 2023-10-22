@@ -1,3 +1,5 @@
+import sys
+
 def factorialNum(number):
     """Python program to find the factorial of a number provided by the user.
     Args:
@@ -5,6 +7,7 @@ def factorialNum(number):
     Returns:
         Int: Return a number which is a factorial of the input
     """    
+    
     factorial = 1 
     if number < 0:
         print("Factorial does not exist for negative numbers")
@@ -14,5 +17,11 @@ def factorialNum(number):
         for i in range(1,number+1):
             factorial = factorial*i
         return factorial
+    
 
-print(factorialNum(7))
+def main(argv): 
+    # argv[0]: is the user input 
+    print(factorialNum(int(argv[0])))
+
+if __name__ == "__main__":
+    main(sys.argv[1:])
